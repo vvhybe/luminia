@@ -4,8 +4,8 @@ const chatInput = document.getElementById("chatInput");
 const Students = document.querySelector("[data-students]");
 const studSearch = document.querySelector("[stud-Data-Search]");
 
-//// getting students data from local server at port 5500:
-fetch("http://127.0.0.1:5500/../Api/students.json").then(rep => rep.json()).then(JSONstudents => { 
+//// getting students data from url host:
+fetch(`${window.location.host}/../Api/students.json`).then(rep => rep.json()).then(JSONstudents => {
     JSONstudents.forEach(stud => {
         const studCard = document.createElement('div');
         const studImg = document.createElement('div');
