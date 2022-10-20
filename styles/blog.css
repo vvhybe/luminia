@@ -1,0 +1,432 @@
+body::-webkit-scrollbar{
+    display: none;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.navbar{
+    width: 100%;
+}
+
+.chat{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    height: 91vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.chat .menu{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 35%;
+    margin: 0;
+    padding: 0;
+    padding-top: 1em;
+    background-color: #111b21; /*#00a884*/
+    animation: backwardZoom .8s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+    /* transform: perspective(4em) translateZ(200%); */
+}
+
+/* @keyframes  backwardZoom{
+    100%{
+        transform: perspective(4em) translateZ(0%);
+    }
+} */
+
+.menu .searchfield{
+    position: relative;
+    height: 3em;
+    width: 100%;
+    margin: 0;
+    padding: .5em;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.712);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchfield .studDataSearch{
+    position: relative;
+    outline: none;
+    height: 2.6em;
+    width: 90%;
+    padding: .5em;
+    margin-bottom: 1em;
+    color: white;
+    font-family: inherit;
+    border: 1.4px solid rgba(128, 128, 128, 0.712);
+    border-radius: .4em;
+    background-color: #121f27;
+    transition: all .2s ease-in-out;
+}
+
+.studDataSearch::-webkit-search-cancel-button{
+    display: none;
+}
+
+.searchfield .stdnSrchBtn{
+    outline: none;
+    border: none;
+    position: absolute;
+    top: .5em;
+    height: 1.5em;
+    width: 1.5em;
+    right: 2em;
+    text-align: center;
+}
+
+.searchfield .stdnSrchBtn .iconify{
+    color: rgba(128, 128, 128, 0.712);
+    height: 80%;
+    width: 80%;
+}
+
+.menu .students{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-top: 1em;
+    background-color: #111b21; /*#00a884*/
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.students::-webkit-scrollbar{
+    width: 6px;
+}
+
+.students::-webkit-scrollbar-track{
+    background: transparent;
+    border-radius: 3px;
+}
+
+.students::-webkit-scrollbar-thumb{
+    background: #293942;
+    border-radius: 3px;
+    transition: all .2s ease-in-out;
+}
+
+.students::-webkit-scrollbar-thumb:hover{
+    background: #425b69;
+}
+
+.menu .students .stud{
+    height: 5em;
+    width: 100%;
+    margin-bottom: .8em;
+    padding: .4em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    animation: zoomIn .3s cubic-bezier(0.175, 0.885, 0.32, 1.275) .1s forwards;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.menu .students .stud:hover{
+    background-color: #212f36dc;
+}
+
+@keyframes zoomIn {
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.hideCards{
+    transform: scale(0) !important;
+    opacity: 0 !important;
+    display: none !important;
+}
+
+.menu .students .stud .profileImg{
+    height: 55px;
+    width: 55px;
+    margin: 0;
+    border-radius: 50%;
+    background-color: #102233;
+    background: url(../imgs/students/GloriaWeingartner.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.menu .students .one .profileImg{
+    background: url(../imgs/students/EdwardMBrock.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.menu .students .tow .profileImg{
+    background: url(../imgs/students/AnthonyRamos.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.menu .students .three .profileImg{
+    background: url(../imgs/students/KalaABerger.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.menu .students .four .profileImg{
+    background: url(../imgs/students/KirkSStewart.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.menu .students .stud .studInfo{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+    padding-left: 1.5em;
+    border-bottom: .4px solid rgba(128, 128, 128, 0.712);
+}
+
+.menu .students .stud .studInfo h5{
+    color: white;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+}
+
+.menu .students .stud .studInfo p{
+    color: rgba(128, 128, 128, 0.712);
+    margin: 0em;
+    font-weight: bold;
+    font-size: smaller;
+    transition: all .3s ease-in-out;
+}
+
+.chat .hanging{
+    position: relative;
+    height: 100%;
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hanging .chatHeader{
+    position: relative;
+    height: 4.5em;
+    width: 100%;
+    background-color: #111b21;
+    z-index: 900;
+}
+
+.hanging .hangingBody{
+    position: relative;
+    height: 83%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+    background-color: #111314;
+    overflow-y: scroll;
+}
+
+.hanging .chatBar{
+    position: relative;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #121f27;
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.chatBar .iconsinput{
+    position: relative;
+    height: 4em;
+    width: 100%;
+    display: flex;
+    border-bottom: 1.4px solid rgba(128, 128, 128, 0.712);
+    justify-content: space-around;
+    align-items: center;
+}
+
+.chatBar .iconsinput button{
+    position: relative;
+    height: 3em;
+    width: 3em;
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.chatBar .iconsinput button .iconify{
+    height: 100%;
+    width: 100%;
+    color: rgba(128, 128, 128, 0.712);
+    transition: all .3s ease-in-out;
+}
+
+.chatBar .iconsinput button .iconify:hover{
+    color: white;
+}
+
+.chatBar .iconsinput input{
+    outline: none;
+    padding: .6em 1em;
+    width: 75%;
+    font-family: inherit;
+    color: white;
+    border: 1.4px solid rgba(128, 128, 128, 0.712);
+    border-radius: .4em;
+    background: transparent;
+    transition: all .3s ease-in-out;
+}
+
+.chatBar .iconsinput input:hover{
+    border-color: white;
+}
+
+.chatBar .ChatEmojis{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 0;
+    width: 100%;
+    transform: scale(0);
+    transition: all .4s ease-in-out;
+}
+
+.activeEmoji{
+    padding: 1em;
+    transform: scale(1) !important;
+    height: 20em !important;
+}
+
+.chatBar .ChatEmojis .searchEmoji{
+    position: relative;
+    height: 2em;
+    width: 100%;
+    margin-bottom: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatBar .ChatEmojis .searchEmoji input{
+    outline: none;
+    padding: .5em 1em;
+    width: 80%;
+    background: transparent;
+    color: white;
+    font-family: inherit;
+    border: 1.4px solid rgba(128, 128, 128, 0.712);
+    border-radius: 2em;
+    transition: all .3s ease-in-out;
+}
+
+.chatBar .ChatEmojis .searchEmoji input:hover{
+    border-color: white;
+}
+
+.chatBar .ChatEmojis .emojis{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.chatBar .ChatEmojis .emojis button{
+    outline: none;
+    border: none;
+    height: 1.5em;
+    width: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    text-align: center;
+    font-size: 1.3em;   
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.chatBar .ChatEmojis .emojis button:is(:hover, :focus){
+    background-color: #1c2e3a;
+}
+
+
+.babelChat{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: .4em;
+    animation: bubbel .3s cubic-bezier(0.175, 0.885, 0.32, 1.275) .1s forwards;
+    opacity: 0;
+    transform: scale(0);
+}
+
+@keyframes bubbel{
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.babelChat .msgcontainer{
+    min-height: 2em;
+    max-width: 400px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--initial-DrKcolor-1);
+    border-radius: 1em;
+}
+
+.babelChat .msgcontainer p{
+    font-size: .9em;
+    font-weight: bold;
+    margin: .5em;
+}
+
+.babelChat .msgTime{
+    height: 1.2em;
+    width: 100%;
+    padding-right: .8em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.babelChat .msgTime h6{
+    color: rgba(255, 255, 255, 0.438);
+}

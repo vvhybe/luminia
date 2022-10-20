@@ -1,0 +1,258 @@
+
+.presentation{
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 95vh;
+    width: 100%;
+    margin-bottom: 2em;
+    background-color: var(--befor-chargin);
+    color: white;
+    transition: all .3s ease-in-out;
+}
+
+.presentation .presBg{
+    position: relative;
+    height: 100%;
+    width: 60%;
+    background: url(../imgs/hero/ContactUS.jpg) no-repeat left;
+    background-size: cover;
+    transform: translateX(-200%);
+    animation: leftSlid 1s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes leftSlid {
+    0%{
+        transform: translateX(-200%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(-35%);
+        opacity: 1;
+    }
+}
+
+.presentation .ContactInfo{
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    right: -200%; 
+    height: auto;
+    width: 700px;
+    border-radius: 5px;
+    background-color: var(--fitsh-bg-color);
+    z-index: 2;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+    animation: rigthSlid 1s cubic-bezier(0.215, 0.610, 0.355, 1) .5s forwards;
+    opacity: 0;
+}
+
+@keyframes  rigthSlid{
+    0%{
+        right: -200%;
+        opacity: 0;
+    }
+    100%{
+        right: 4em;
+        opacity: 1;
+    }
+}
+
+.ContactInfo::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--initial-color-2);
+    clip-path: circle(0% at 0% 0%);
+    transition: all .3s ease-in-out;
+    z-index: -1;
+}
+
+.ContactInfo:hover::before{
+    clip-path: circle(30% at 6% -18%);
+}
+
+.ContactInfo:hover{
+    transform: scale(1.02);
+}
+.ContactInfo .ContTitle{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.ContactInfo .ContTitle h1{
+    width: max-content;
+    margin: 1em;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: var(--initial-color-1);
+    border-bottom: 2px solid var(--initial-color-1);
+}
+
+@media screen and (max-width:1000px) {
+    .presentation{
+        background: url(../imgs/hero/ContactUS.jpg) no-repeat center;
+        background-size: cover;
+    }
+    .presentation .presBg{
+        display: none;
+    }
+    .presentation .ContactInfo{
+        right: 50%;
+        width: 70%;
+        height: max-content;
+        z-index: 2;
+    }
+    .ContactInfo:hover::before{
+        clip-path: circle(30% at 3% -37%);
+    }
+}
+
+.ContactInfo .userInfo{
+    box-sizing: border-box;
+    height: auto;
+    width: 83%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em;
+    margin-right: 0;
+    overflow: hidden;
+}
+
+.userInfo .input{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 1.5em;
+}
+
+.userInfo .input{
+    width: 90%;
+    transition: all .2s ease-in-out;
+}
+
+.userInfo .input label{
+    margin-bottom: .4em;
+    font-size: .92rem;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: white;
+    transition: all .2s ease-in-out;
+}
+
+.userInfo .input input{
+    outline: none;
+    height: 20px;
+    width: 100%;
+    padding: .5em;
+    font-family: inherit;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #8f8f8f;
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus{
+    border: 2px solid var(--initial-color-1) !important;
+    -webkit-text-fill-color: var(--initial-color-1) !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.userInfo .input:hover input{
+    border: 2px solid white;
+}
+
+.userInfo .input input::placeholder{
+    transition: all .2s ease-in-out;
+}
+.userInfo .input input:hover::placeholder{
+    color: #cecece;
+}
+
+.userInfo .input textarea{
+    outline: none;
+    min-width: 100%;
+    min-height: 20px;
+    max-width: 100%;
+    max-height: 13em;
+    height: 13em;
+    width: 100%;
+    padding: .5em;
+    font-family: inherit;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #8f8f8f;
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+}
+
+.userInfo .input:hover textarea{
+    border: 2px solid white;
+}
+
+.userInfo .input textarea::-webkit-scrollbar{
+    display: none;
+}
+
+.userInfo .input textarea::-webkit-resizer{
+    display: none;
+}
+
+.userInfo .input textarea::placeholder{
+    transition: all .2s ease-in-out;
+}
+
+.userInfo .input textarea:hover::placeholder{
+    color: #cecece;
+}
+
+@media screen and (max-width:900px){
+    .userInfo .input textarea{
+        max-height: 6em;
+    }
+}
+
+.userInfo .submitBtn{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.userInfo button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 0 1em 1.5em;
+    height: 2.5em;
+    width: 8em;
+    font-family: inherit;
+    text-decoration: none;
+    font-size: .87rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 1.2em;
+    background-color: var(--initial-DrKcolor-1);
+    transition: all .2s ease-in-out;
+}
+
+.userInfo button:hover{
+    transform: scale(1.02);
+    background-color: rgb(255, 208, 0);
+    box-shadow: 0 0 5px rgb(255, 208, 0);
+    filter: saturate(100%);
+}

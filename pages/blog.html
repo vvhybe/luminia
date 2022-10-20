@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/blog.css">
+    <link rel="shortcut icon" href="../imgs/logo/favicon/Lumina_FVicon.png" type="image/png">
+    <script defer src="../app/main.js"></script>
+    <script defer src="../app/emoji.min.js"></script>
+    <script defer src="../app/blog.js"></script>
+    <script defer src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+    <script defer src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+    <title></title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo" id="logo">
+                <div class="headerFavIcon"></div>
+                <h2><span class="frst-word"> luminia</span> college</h2>
+            </div>
+        
+            <div class="links">
+                <span><a id="home" href="../index.html">home</a></span>
+                <span><a id="about" href="about.html" >about</a></span>
+                <span><a id="contact" href="contact.html">contact</a></span>
+                <span><a id="blog" href="blog.html">blog</a></span>
+                <span><a id="careers" href="careers.html">careers</a></span>
+            </div>
+
+            <div class="search">
+                <input type="search" name="searchInput" class="srchput" id="inpSearch" placeholder="find">
+                <a class="button" href="#"><span class="iconify" data-icon="bx:bx-search-alt-2" ></span></a>
+            </div>
+        </nav>
+        <!-- <div class="scrollIndicateur"><div class="thumb" scrollIdx></div></div> -->
+    </header>
+
+    <section class="chat">
+        <menu class="menu">
+            <div class="searchfield">
+                <input type="search" name="studDataSearch" class="studDataSearch" stud-Data-Search placeholder="Search for students">
+                <a class="stdnSrchBtn" href="#"><span class="iconify" data-icon="bx:bx-search-alt-2" ></span></a>
+            </div>
+            <section class="students" data-students>
+                <!-- displaying the students here from the lolal Server | localhost -->
+            </section>
+        </menu>
+        <section class="hanging">
+            <div class="chatHeader"></div>
+            <div class="hangingBody" data-chat></div>
+            <div class="chatBar">
+                <div class="iconsinput">
+                    <button id="emojibtn"><span class="iconify" data-icon="fluent:emoji-24-regular"></span></button>
+                    <button id="documentBtn"><span class="iconify" data-icon="prime:paperclip"></span></button>
+                    <input type="text" name="chatInput" class="chatInput" id="chatInput" placeholder="Type a message" autofocus>
+                    <button id="micBtn"><span class="iconify" data-icon="carbon:microphone-filled"></span></button>
+                </div>
+                <div class="ChatEmojis" data-emoji>
+                    <div class="searchEmoji">
+                        <input type="text" name="sarchEmoji" id="searchEmoji" placeholder="Search for Emoji">
+                    </div>
+                    <div class="emojis" display-emojis> 
+                    </div>
+                </div>
+            </div>
+            <template data-message>
+                <div class="babelChat">
+                    <div class="msgcontainer">
+                        <p message></p>
+                    </div>
+                    <div class="msgTime">
+                        <h6 message-time></h6>
+                    </div>
+                </div>
+            </template>
+        </section>
+    </section>
+
+    <footer>
+        <div class="footLogo">
+            <a href="../index.html"></a>
+        </div>
+        <div class="footerHead">
+            <h1>POWERFUL PREPATION FOR</h1>
+            <a href="about.html">-> YOUR FUTURE STARTS HERE <-</a>
+            <a href="blog.html">-> LOCK FOR JOB <-</a>
+        </div>
+        <div class="footerBody">
+            <p class="paragfooter">University of <span><span>Luminia </span>College</span>, are definded in Morocco exactly on Marrakech specify lwaha street, at institute of thechnology.</p>
+        </div>
+        <h3>You can find us on social media.</h3>
+        <nav class="Footer_socialMedia">
+            <a class="footicon" href="https://facebook.com" target="_blank" rel="noopener noreferrer"><span class="iconify" data-icon="akar-icons:facebook-fill" ></span></a>
+            <a class="footicon" href="https://instagram.com" target="_blank" rel="noopener noreferrer"><span class="iconify" data-icon="akar-icons:instagram-fill" ></span></a>
+            <a class="footicon" href="https://whatsapp.com" target="_blank" rel="noopener noreferrer"><span class="iconify" data-icon="akar-icons:whatsapp-fill" ></span></a>
+        </nav>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/careers.css">
+    <link rel="shortcut icon" href="../imgs/logo/favicon/Lumina_FVicon.png" type="image/png">
+    <script defer src="../app/careers.js"></script>
+    <script defer src="../app/main.js"></script>
+    <script defer src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+
+    <title></title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo" id="logo">
+                <div class="headerFavIcon"></div>
+                <h2><span class="frst-word"> luminia</span> college</h2>
+            </div>
+        
+            <div class="links">
+                <span><a id="home" href="../index.html">home</a></span>
+                <span><a id="about" href="about.html" >about</a></span>
+                <span><a id="contact" href="contact.html">contact</a></span>
+                <span><a id="blog" href="blog.html">blog</a></span>
+                <span><a id="careers" href="careers.html">careers</a></span>
+            </div>
+
+            <div class="search">
+                <input type="search" name="searchInput" class="srchput" id="inpSearch" placeholder="find">
+                <a class="button" href="#"><span class="iconify" data-icon="bx:bx-search-alt-2" ></span></a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="careers">
+        <div class="instraction">
+            <div class="careerDef">
+                <div class="careerIllustration"></div>
+                <div class="jobTitle">
+                    <h1>we are locking for</h1>
+                    <h3>talented people</h3>
+                </div>
+            </div>
+            <div class="careersInstraPara">
+                <h3>read carefuly:</h3>
+                <p>to process your requist you must include your <span>personal number</span> and <span>personal Email</span> and also a <span>CV</span> in format of <span>.pdf</span> or <span>.doc</span>.</p>
+            </div>
+        </div>
+
+        <article class="ContactInfo">
+            <h1>lock for a job:</h1>
+            <form id="userFormInfo" class="userInfo" action="#" method="get">
+                <div class="input FstName">
+                    <label for="fstname">First name:</label>
+                    <input id="fstname" class="fstname" type="text" name="fstname" placeholder="your first name">
+                </div>
+
+                <div class="input LstName">
+                    <label for="lstname">Last name:</label>
+                    <input id="lstname" class="lstname" type="text" name="lstname" placeholder="your last name">
+                </div>
+
+                <div class="input phone">
+                    <label for="phone">Phone number:</label>
+                    <input id="phone" class="phone" type="tel" name="phone" placeholder="your phone number" autocomplete="tel-country-code">
+                </div>
+                
+                <div class="input AdressEmail">
+                    <label for="email">Your Email:</label>
+                    <input id="email" class="email" type="email" name="email" placeholder="example@gmail.com">
+                </div>
+
+                <div class="buttons">
+                    <button id="submit" type="submit">Submit</button>
+                    <button id="upCV" class="UploadCV" type="button">Upload CV<input id="cv" class="cv" type="file" name="cv" accept=".pdf, .doc"></button>
+                </div>
+            </form>
+        </article>
+        
+    </section>
+
+    <footer>
+        <div class="footLogo">
+            <a href="../index.html"></a>
+        </div>
+        <div class="footerHead">
+            <h1>POWERFUL PREPATION FOR</h1>
+            <a href="about.html">-> YOUR FUTURE STARTS HERE <-</a>
+            <a href="blog.html">-> LOCK FOR JOB <-</a>
+        </div>
+        <div class="footerBody">
+            <p class="paragfooter">University of <span><span>Luminia </span>College</span>, are definded in Morocco exactly on Marrakech specify lwaha street, at institute of thechnology.</p>
+        </div>
+        <h3>You can find us on social media.</h3>
+        <nav class="Footer_socialMedia">
+            <a class="footicon" href="https://facebook.com" target="_blank" rel="noopener noreferrer"><span class="iconify" data-icon="akar-icons:facebook-fill" ></span></a>
+            <a class="footicon" href="https://instagram.com" target="_blank" rel="noopener noreferrer"><span class="iconify" data-icon="akar-icons:instagram-fill" ></span></a>
+            <a class="footicon" href="https://whatsapp.com" target="_blank" rel="noopener noreferrer"><span class="iconify" data-icon="akar-icons:whatsapp-fill" ></span></a>
+        </nav>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+body{
+    margin: 0;
+    padding: 5em 0 0 0;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar{
+    display: none;
+}
+
+/* *::-webkit-scrollbar-track{
+    background: transparent;
+    border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb{
+    background: var(--initial-DrKcolor-1);
+    border-radius: 3px;
+    transition: all .2s ease-in-out;
+}
+
+*::-webkit-scrollbar-thumb:hover{
+    background: var(--initial-color-1);
+} */
+
+:root{
+    --initial-bg-color: black;
+    --fitsh-bg-color: #102233;
+    --fitsh-bg-color1: #f0f0f0;
+    --initial-color-1: #ffb004;
+    --initial-color-2: #439688;
+    --initial-DrKcolor-1: #eba510;
+    --initial-DrKcolor-2: #00463a;
+    --befor-chargin: #cccccc;
+    --smoth: 0 0 .6em #b4b4b4;
+    --sharp: 0 0 .6em black;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    height: 5em;
+    width: 96%;
+    padding: 0 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--initial-bg-color);
+    color: white;
+    z-index: 999;
+    animation: nav-load .3s ease-in forwards;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+@keyframes nav-load{
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.navbar .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+}
+.navbar .logo .headerFavIcon{
+    height: 4em;
+    width: 4em;
+    background: url(../imgs/logo/favicon/Luminia_BW_Soft.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.navbar .logo h2{
+    text-transform: capitalize;
+    color: #c5c5c5;
+}
+
+.navbar .logo h2 .frst-word{
+    color: var(--initial-color-1);
+}
+
+.navbar .logo .iconify{
+    color: var(--initial-color-1);
+}
+
+.navbar .links span a{
+    outline: none;
+    margin: 0 1em;
+    font-size: .875rem;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #c5c5c5;
+    font-weight: 600;
+    transition: all .1s ease-in;
+}
+
+.navbar .links span a:is(:hover, :focus){
+    color: var(--initial-color-2);
+    border-bottom: .250em solid var(--initial-color-2);
+}
+
+/* temp class */
+.navbar .links span .active{
+    color: var(--initial-color-2);
+    border-bottom: .250em solid var(--initial-color-2);
+}
+
+.navbar .search{
+    position: relative;
+    width: 0%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    animation: search-slid .3s cubic-bezier(0.175, 0.885, 0.32, 1.275) .4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes  search-slid{
+    0%{
+        width: 0;
+        opacity: 0;
+    }
+    100%{
+        width: 25%;
+        opacity: 1;
+    }
+}
+
+.search .srchput{
+    outline: none;
+    height: 35px;
+    width: min(100%);
+    padding: 1em 3em 1em 1em;
+    color: white;
+    font-size: smaller;
+    font-family: inherit;
+    border-radius: 4px;
+    border: 0;
+    border-right: 2px solid var(--initial-color-1);
+    border-bottom: 2px solid var(--initial-color-1);
+    background-color: #3d3d3d88;
+    transition: all .2s ease-in;
+}
+
+.srchput::-webkit-search-cancel-button{
+    display: none;
+}
+
+.srchput::placeholder{
+    color: white;
+    font-family: monospace;
+    font-size: inherit;
+    padding-left: .4em;
+    opacity: 0.6;
+}
+
+.srchput:hover::placeholder{
+    transition: 0.3s all ease-in-out;
+    opacity: 1;
+}
+
+.search .button{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    text-decoration: none;
+    margin-right: .7em;
+    margin-bottom: .1em;
+    height: 24px;
+    width: 24px;
+    border-radius: 12px;
+    background-color:  var(--initial-color-1);
+    cursor: pointer;
+    transition: background-color .1s ease-in;
+}
+
+.search .button .iconify{
+    height: 16px;
+    width: 16px;
+    color: white;
+}
+
+
+@media screen and (max-width: 400px){
+    body{
+        padding: 0;
+    }
+    .navbar{
+        top: 95%;
+    }
+}
+
+.scrollIndicateur{
+    position: fixed;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    z-index: 999;
+}
+
+.scrollIndicateur .thumb{
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 0%;
+    border-radius: 2px;
+    background-color: var(--initial-color-1);
+    transition: all .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+
+footer{
+    position: relative;
+    box-sizing: border-box;
+    height: 35em;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: inherit;
+    color: white;
+    background-color: black;
+}
+
+footer .footLogo{
+    height: 150px;
+    width: 150px;
+    background-image: url(../imgs/logo/favicon/Luminia_BW_Soft.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+footer .footerHead{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #b4b4b4;
+}
+
+footer .footerHead a:is(:link, :visited, :active){
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+footer .footerHead a::before{
+    content: '';
+    position: absolute;
+    top: 90%;
+    height: 2px;
+    width: 0%;
+    background-color: white;
+    border-radius: 2px;
+    transition: all .4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+footer .footerHead a:hover{
+    transform: scale(1.02);
+}
+
+footer .footerHead a:hover::before{
+    width: 100%;
+}
+
+footer .footerBody{
+    width: 20em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footerBody p{
+    text-align: center;
+}
+
+footer .footerBody p span{
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--initial-color-2);
+}
+
+footer .footerBody p span span{
+    color: var(--initial-color-1);
+}
+
+footer .Footer_socialMedia{
+    width: 10em;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer .Footer_socialMedia .footicon{
+    transform: scale(1.1);
+    color: white;
+    transition: all .3s ease-in-out;
+}
+
+footer .Footer_socialMedia .footicon:hover{
+    color: var(--initial-color-2);
+}

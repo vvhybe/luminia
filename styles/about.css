@@ -1,0 +1,406 @@
+
+.presentation{
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 460px;
+    width: 100%;
+    margin-bottom: 2em;
+    background-color: var(--befor-chargin);
+    color: white;
+    transition: all .3s ease-in-out;
+}
+
+.presentation .presBg{
+    position: relative;
+    height: 100%;
+    width: 60%;
+    background: url(../imgs/hero/management.jpg) no-repeat left;
+    background-size: cover;
+    transform: translateX(-200%);
+    animation: leftSlid 1s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+    opacity: 0;
+}
+
+
+@keyframes leftSlid {
+    0%{
+        transform: translateX(-200%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(-35%);
+        opacity: 1;
+    }
+}
+
+
+.presentation .presentationPar{
+    position: absolute;
+    box-sizing: border-box;
+    right: -200%; 
+    height: 80%;
+    width: 50%;
+    border-radius: 5px;
+    background-color: var(--fitsh-bg-color);
+    z-index: 2;
+    overflow: hidden;
+    animation: rigthSlid 1s cubic-bezier(0.215, 0.610, 0.355, 1) .5s forwards;
+    transition: all .3s ease-in-out;
+    opacity: 0;
+}
+
+
+@keyframes  rigthSlid{
+    0%{
+        right: -200%;
+        opacity: 0;
+    }
+    100%{
+        right: 4em;
+        opacity: 1;
+    }
+}
+
+
+.presentationPar::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--initial-color-2);
+    clip-path: circle(0% at 0% 0%);
+    transition: all .3s ease-in-out;
+    z-index: -1;
+}
+
+.presentationPar:hover::before{
+    clip-path: circle(31% at 6% -26%);
+}
+
+.presentationPar:hover{
+    transform: scale(1.02);
+}
+
+.presentationPar h1{
+    width: 16%;
+    margin: 1em;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: var(--initial-color-1);
+    border-bottom: 2px solid var(--initial-color-1);
+}
+
+@media screen and (max-width:1000px) {
+    .presentation .presBg{
+        width: 100%;
+        z-index: 0;
+        transform: translateX(0%);
+
+    }
+    .presentation .presentationPar{
+        right: 10%;
+        width: 80%;
+        height: 75%;
+    }
+    .presentationPar h1{
+        width: 14%;
+    }
+    .presentationPar:hover::before{
+        clip-path: circle(30% at 3% -37%);
+    }
+}
+
+.presentationPar p{
+    text-align: justify;
+    margin: 1em;
+}
+
+.presentationPar button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 0 1em 1.5em;
+    height: 2.5em;
+    width: 8em;
+    border-radius: 1.2em;
+    background-color: var(--initial-DrKcolor-1);
+    transition: all .2s ease-in-out;
+}
+
+.presentationPar button a:is(:link, :visited, :active){
+    color: black;
+    font-family: inherit;
+    text-decoration: none;
+    font-size: .7rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.presentationPar button:hover{
+    transform: scale(1.02);
+    background-color: rgb(255, 208, 0);
+    box-shadow: 0 0 5px rgb(255, 208, 0);
+    filter: saturate(100%);
+}
+
+.team{
+    position: relative;
+    box-sizing: border-box;
+    height: 500px;
+    width: 100%;
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--befor-chargin);
+}
+
+.team .teamTitle{
+    position: relative;
+    box-sizing: border-box;
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.team .teamTitle hr{
+    width: 40%;
+}
+
+.team .teamTitle h1{
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+.team .staf{
+    position: relative;
+    box-sizing: border-box;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.staf article{
+    position: relative;
+    box-sizing: border-box;
+    height: 20em;
+    width: 18em;
+    padding: .8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1em;
+    background-color: var(--fitsh-bg-color1);
+    transition: all .4s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.staf article::before{
+    content: '';
+    position: absolute;
+    top: 90%;
+    height: 40%;
+    width: 40%;
+    background-color: rgb(65, 65, 65);
+    border-radius: 50%;
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.25);
+    filter: blur(1em);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.staf article:hover{
+    height: 16em;
+    width: 25em;
+    background-color: var(--fitsh-bg-color);
+}
+
+.staf article:hover::before{
+    pointer-events: all;
+    animation: floatSHadow .3s ease-in-out .4s forwards;
+}
+
+@keyframes  floatSHadow{
+    100%{
+        opacity: .8;
+    }
+}
+
+.staf article div{
+    position: absolute;
+    top: -30%;
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    background-color: var(--befor-chargin);
+    pointer-events: none;
+    transition: all .3s cubic-bezier(0.52, 0.57, 0.01, 1.14);
+}
+
+.staf article:hover div{
+    left: 0;
+    top: 12%;
+    transform: scale(.8);
+}
+
+.staf article main{
+    position: absolute;
+    right: 3em;
+    top: 15%;
+    transform: scale(0);
+    opacity: 0; 
+    transition: all .4s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    z-index: -4;
+}
+
+.staf article:hover main{
+    transform: scale(1);
+    opacity: 1;
+    z-index: 0;
+}
+
+.staf article main h5{
+    position: relative;
+    width: max-content;
+    margin: .8em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.staf article main h5::before{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 0%;
+    bottom: 0%;
+    background-color: white;
+    transition: all .3s ease-in-out;
+    opacity: 0;
+}
+
+.staf article main h5:hover::before{
+    width: 100%;
+    opacity: 1;
+}
+
+.staf article main h5 span{
+    text-transform: capitalize;
+    color: var(--initial-color-2);
+}
+
+.staf article main h5 a:is(:link, :visited, :active){
+    text-decoration: none;
+    color: var(--initial-color-2);
+    text-transform: capitalize;
+}
+
+.staf article .socialMedia{
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all .3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    pointer-events: none;
+}
+
+.staf article:hover .socialMedia{
+    transform: translateY(0%);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.staf article .socialMedia a{
+    transition: all .3s cubic-bezier(0.52, 0.57, 0.01, 1.14);
+} 
+
+.staf article .socialMedia a .iconify{
+    height: 24px;
+    width: 24px;
+    margin: 0 1em;
+    color: var(--initial-DrKcolor-1);
+    transform: translateY(-100%);
+    transition: all .2s ease-in-out;
+}
+
+.staf article .socialMedia a .iconify:hover{
+    color: var(--initial-color-1);
+}
+
+.staf article .socialMedia .face{
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+
+.staf article:hover .socialMedia .face{
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+.staf article .socialMedia .insta{
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.staf article:hover .socialMedia .insta{
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.staf article .socialMedia .what{
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.staf article:hover .socialMedia .what{
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+.staf article p{
+    text-align: justify;
+    margin-top: 5em;
+    transition: all .3s cubic-bezier(0.23, 1, 0.320, 1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+.staf article:hover p{
+    animation: disapear .3s cubic-bezier(0.23, 1, 0.320, 1) forwards;
+}
+
+@keyframes  disapear{
+    100%{
+        transform: scale(0);
+        opacity: 0;
+        display: none;
+    }   
+}
+
+.staf article .abzk{
+    background: url(../imgs/team/Abzk.png) no-repeat center;
+    background-size: cover;
+}
+
+.staf article .YB_07{
+    background: url(../imgs/team/YB_07.png) no-repeat center;
+    background-size: cover;
+}
+
+.staf article .Kidwah{
+    background: url(../imgs/team/Kidwah.png) no-repeat center;
+    background-size: cover;
+}

@@ -1,0 +1,365 @@
+
+.careers{
+    position: relative;
+    box-sizing: border-box;
+    height: 95vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    background-color: var(--befor-chargin);
+    background: url(../imgs/hero/Careers.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.careers .instraction{
+    position: relative;
+    box-sizing: border-box;
+    height: 250px;
+    width: 45%;
+    padding: 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.664);
+    transition: all .3s ease-in-out;
+    animation: leftSlid 1s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes leftSlid {
+    0%{
+        transform: translateX(-200%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+.instraction .careerDef{
+    position: relative;
+    box-sizing: border-box;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.instraction .careerDef .careerIllustration{
+    position: absolute;
+    top: -60%;
+    height: 120px;
+    width: 120px;
+    background-color: var(--fitsh-bg-color);
+    background: url(../svg/careers/undraw_career_progress_ivdb.svg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.instraction .careerDef .jobTitle{
+    position: relative;
+    margin-left: 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.careerDef .jobTitle h1{
+    margin: .4em 0 0 .4em;
+    font-size: 2rem;
+    color: white;
+    text-transform: uppercase;
+}
+
+.careerDef .jobTitle h3{
+    margin: 0 0 0 1.6em;
+    color: #b4b4b4;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+.instraction .careersInstraPara h3{
+    position: relative;
+    color: var(--initial-color-1);
+    text-transform: capitalize;
+    transition: all .2s ease-in-out;
+}
+
+.instraction .careersInstraPara h3::before{
+    position: absolute;
+    content: '';
+    top: 105%;
+    height: 2px;
+    width: 0%;
+    border-radius: 2px;
+    background-color: var(--initial-color-1);
+    transition: all .5s ease-in-out;
+    opacity: 0;
+}
+
+.instraction .careersInstraPara p{
+    color: #cfcfcf;
+    text-align: justify;
+}
+
+.instraction .careersInstraPara p span{
+    margin: 0;
+    padding: 0.2px 8px;
+    background-color: #b4b4b452;
+    border-radius: 10px;
+    color: white;
+}
+
+.instraction:hover .careersInstraPara h3::before{
+    width: 100%;
+    opacity: 1;
+}
+
+.ContactInfo{
+    position: relative;
+    box-sizing: border-box; 
+    height: 525px;
+    width: 45%;
+    border-radius: 5px;
+    background-color: var(--fitsh-bg-color);
+    transition: all .3s ease-in-out;
+    transform: translateX(25%) scale(1);
+    animation: rigthSlid 1s cubic-bezier(0.215, 0.610, 0.355, 1) .5s forwards;
+    overflow: hidden;
+    opacity: 0;
+}
+
+@keyframes  rigthSlid{
+    0%{
+        right: -200%;
+        opacity: 0;
+    }
+    100%{
+        right: 4em;
+        opacity: 1;
+    }
+}
+
+.ContactInfo::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--initial-color-2);
+    clip-path: circle(0% at -5% -5%);
+    transition: all .3s ease-in-out;
+    z-index: -1;
+}
+
+.ContactInfo:hover::before{
+    clip-path: circle(33% at 9% -20%);
+}
+
+.ContactInfo:hover{
+    transform: translateX(25%) scale(1.02);
+}
+
+.ContactInfo h1{
+    width: max-content;
+    margin: 1em;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: var(--initial-color-1);
+    border-bottom: 2px solid var(--initial-color-1);
+}
+
+@media screen and (max-width:1000px) {
+    .ContactInfo{
+        right: 10%;
+        width: 80%;
+        height: fit-content;
+    }
+    .ContactInfo h1{
+        width: 14%;
+    }
+    .ContactInfo:hover::before{
+        clip-path: circle(30% at 3% -37%);
+    }
+
+    .careers .instraction{
+        position: absolute;
+        left: -10%;
+    }
+}
+
+@media screen and (max-width:1072px){
+    .careers{
+        height: 100vh;
+        padding: 3em;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .ContactInfo{
+        transform: translateX(10%);
+    }
+    
+    .ContactInfo:hover{
+        transform: translateX(10%) scale(1.02);
+    }
+}
+
+.ContactInfo .userInfo{
+    box-sizing: border-box;
+    height: auto;
+    width: 83%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: .7em;
+    margin-left: 3em;
+    overflow: hidden;
+}
+
+.userInfo .input{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 1.5em;
+}
+
+.userInfo .input{
+    width: 90%;
+    transition: all .2s ease-in-out;
+}
+
+.userInfo .input label{
+    margin-bottom: .4em;
+    font-size: .92rem;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: white;
+    transition: all .2s ease-in-out;
+}
+
+.userInfo .input input{
+    outline: none;
+    height: 20px;
+    width: 100%;
+    padding: .5em;
+    font-family: inherit;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #8f8f8f;
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 2px solid var(--initial-color-2) !important;
+  -webkit-text-fill-color: var(--initial-color-2) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.userInfo .input:hover input{
+    border: 2px solid white;
+}
+
+.userInfo .input input::placeholder{
+    transition: all .2s ease-in-out;
+}
+.userInfo .input input:hover::placeholder{
+    color: #cecece;
+}
+
+.userInfo .input .cv::-webkit-file-upload-button{
+    outline: none;
+    border: none;
+    background: var(--initial-color-2);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.userInfo .buttons{
+    position: relative;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.buttons button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    height: 2.5em;
+    width: 8em;
+    font-family: inherit;
+    text-decoration: none;
+    font-size: .87rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 1.2em;
+    background-color: var(--initial-DrKcolor-1);
+    transition: all .2s ease-in-out;
+}
+
+.buttons button:hover{
+    transform: scale(1.02);
+    background-color: rgb(255, 208, 0);
+    box-shadow: 0 0 5px rgb(255, 208, 0);
+    filter: saturate(100%);
+}
+
+.buttons .UploadCV{
+    position: relative;
+    height: 2.5em;
+    width: 8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+    text-decoration: none;
+    font-size: .87rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 1.2em;
+    background-color: var(--initial-color-2);
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.buttons .UploadCV input{
+    position: absolute;
+    top: 20%;
+    left: 18%;
+    transform: scale(1.1);
+    cursor: pointer;
+    pointer-events: all;
+    opacity: 0;
+}
+
+.buttons .UploadCV input::-webkit-file-upload-button{
+    cursor: pointer;
+}
+
+.buttons .UploadCV:hover{
+    transform: scale(1.02);
+    background-color: #55c7b4;
+    box-shadow: 0 0 5px #55c7b4;
+    filter: saturate(100%);
+}
