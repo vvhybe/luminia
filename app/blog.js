@@ -5,7 +5,7 @@ const Students = document.querySelector("[data-students]");
 const studSearch = document.querySelector("[stud-Data-Search]");
 
 //// getting students data from url host [deployement Server or the Localhost server]:
-fetch(`${window.location.protocol}://${window.location.host}/../Api/students.json`).then(rep => rep.json()).then(JSONstudents => {
+fetch(`${window.location.protocol}://${window.location.host}/Api/students.json`).then(rep => rep.json()).then(JSONstudents => {
     JSONstudents.forEach(stud => {
         const studCard = document.createElement('div');
         const studImg = document.createElement('div');
